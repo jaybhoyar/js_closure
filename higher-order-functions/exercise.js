@@ -23,6 +23,9 @@ console.log(addS("pizza"));
 console.log(addS("bagel"));
 
 // Challenge 3
+function multiplyByTwo(num) {
+	return num * 2;
+}
 function map(array, callback) {
 	let arr = [];
 	for (let i = 0; i < array.length; i++) {
@@ -30,7 +33,7 @@ function map(array, callback) {
 	}
 	return arr;
 }
-console.log(map([1, 2, 3], addTwo));
+console.log(map([1, 2, 3], multiplyByTwo(1)));
 
 // Challenge 4
 function forEach(array, callback) {

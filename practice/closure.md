@@ -4,15 +4,27 @@
 
 ```js
 // Your code goes here
-
+function multiplyBy(num) {
+	function multiply(number) {
+		return num * number;
+	}
+	return multiply;
+}
 const double = multiplyBy(2);
-const final = double(15); // final should be 30
+const final = double(15);
+console.log(final); // final should be 30
 ```
 
 2. Write a function called `fullName` that takes a string `firstName` as an argument and returns a function. Returned function takes another string `lastName` as an argument and returns full name.
 
 ```js
 // Your code goes here
+function fullName(firstName) {
+	function addNames(lastName) {
+		return firstName + " " + lastName;
+	}
+	return addNames;
+}
 
 const name = fullName("Will");
 const final = name("Smith"); // final should be "Will Smith"
@@ -22,7 +34,11 @@ const final = name("Smith"); // final should be "Will Smith"
 
 ```js
 function isInBetween(a, b) {
-  // your code goes here
+	// your code goes here
+	function boolean(n) {
+		return n >= a && n <= b ? true : false;
+	}
+	return boolean;
 }
 
 const isChild = isInBetween(10, 100);
@@ -31,11 +47,15 @@ isChild(45); // true
 isChild(103); // false
 ```
 
-4. Write a function call `letsWishThem` that take one parameter `string` called `greeting` and returns a fucntion that takes another argument called `message`.
+4. Write a function call `letsWishThem` that take one parameter `string` called `greeting` and returns a function that takes another argument called `message`.
 
 ```js
 function letsWishThem(greeting) {
-  // your code goes here
+	// your code goes here
+	function message(str) {
+		return str;
+	}
+	return message;
 }
 
 const callWithHey = letsWishThem("Hey");
@@ -48,7 +68,12 @@ callWithHello("How Are You?"); // Hello How Are You?
 
 ```js
 function addGame(gameName) {
-  // your code goes here
+	// your code goes here
+	function incr() {
+		let score = 0;
+		return `Score of ${gameName} is ${score + 1}`;
+	}
+	return incr;
 }
 
 // Output
@@ -64,14 +89,18 @@ cricket(); // Your score of Cricket is 2
 
 ```js
 function getCard(suit) {
-  // your code goes here
+	// your code goes here
+	function random() {
+		return Math.random(suit);
+	}
+	return random();
 }
 
 // Output
-const randomClub = addGame("Club");
+const randomClub = getCard("Club");
 randomClub(); // Card is: 6 Club
 randomClub(); // Card is: A Club
-const randomSpade = addGame("Spade");
+const randomSpade = getCard("Spade");
 randomSpade(); // Card is: 6 Spade
 randomSpade(); // Card is: A Spade
 ```
