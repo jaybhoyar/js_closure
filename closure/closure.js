@@ -34,3 +34,20 @@ var lastNameTrier = function(firstName) {
 };
 var firstNameFarmer = lastNameTrier("Farmer"); //logs nothing
 firstNameFarmer("Brown"); //logs 'Farmer Brown'
+
+// storyWriter
+
+function storyWriter() {
+	let story = "";
+	const storyMethods = {
+		addWords: function storyLine() {
+			story += storyLine;
+			console.log(story);
+		},
+		erase: function eraseStory() {
+			story = "";
+			console.log(story);
+		}
+	};
+	return storyMethods;
+}

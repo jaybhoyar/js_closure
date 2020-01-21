@@ -1,24 +1,45 @@
 // Challenge 1
-function addTwo(num) {}
+function addTwo(num) {
+	function incr2() {
+		return num + 2;
+	}
+	return incr2();
+}
 
 // To check if you've completed it, uncomment these console.logs!
-// console.log(addTwo(3));
-// console.log(addTwo(10));
+console.log(addTwo(3));
+console.log(addTwo(10));
 
 // Challenge 2
-function addS(word) {}
+function addS(word) {
+	function joinS() {
+		word + "s";
+	}
+	return joinS();
+}
 
 // uncomment these to check your work
-// console.log(addS('pizza'));
-// console.log(addS('bagel'));
+console.log(addS("pizza"));
+console.log(addS("bagel"));
 
 // Challenge 3
-function map(array, callback) {}
-
-// console.log(map([1, 2, 3], addTwo));
+function map(array, callback) {
+	let arr = [];
+	for (let i = 0; i < array.length; i++) {
+		arr.concat(callback(array[i]));
+	}
+	return arr;
+}
+console.log(map([1, 2, 3], addTwo));
 
 // Challenge 4
-function forEach(array, callback) {}
+function forEach(array, callback) {
+	let arr = [];
+	for (let i = 0; i < array.length; i++) {
+		callback(array[i]);
+	}
+	return arr;
+}
 
 // see for yourself if your forEach works!
 
@@ -27,10 +48,19 @@ function forEach(array, callback) {}
 //--------------------------------------------------
 
 //Extension 1
-function mapWith(array, callback) {}
-
+function mapWith(array, callback) {
+	let arr = [];
+	array.forEach(i => {
+		arr.concat(callback(i));
+	});
+	return arr;
+}
 //Extension 2
-function reduce(array, callback, initialValue) {}
+function reduce(array, callback, initialValue) {
+	array.forEach(i => {
+		arr.concat(callback(i));
+	});
+}
 
 //Extension 3
 function intersection(arrays) {}
