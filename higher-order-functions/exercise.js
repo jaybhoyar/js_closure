@@ -66,9 +66,18 @@ function reduce(array, callback, initialValue) {
 }
 
 //Extension 3
-function intersection(arrays) {}
+function intersection(...arrays) {
+	let intersectionArr = [];
+	arrays.forEach(i => {
+		i.reduce((acc, cv) => {
+			acc = i.includes(cv);
+		}, []);
+		return acc;
+	});
+	return intersectionArr;
+}
 
-// console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
+// console.log(intersection([[5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]]));
 // should log: [5, 15]
 
 //Extension 4
